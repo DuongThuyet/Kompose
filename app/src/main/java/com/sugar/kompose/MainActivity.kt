@@ -233,6 +233,36 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+
+
+    //    fun getProfileAndDocument() = viewModelScope.launch {
+    //        repository.supplierProfile().asFlow().zip(repository.getUpdateDocuments().asFlow()){ profile, docRes->
+    //            if (profile.isNonNull() && docRes.isNonNull()){
+    //                val documents = ArrayList<PhotoDocument>()
+    //                docRes.data?.let {
+    //                    documents.addAll(it)
+    //                }
+    //                profile.data?.supplier?.extra?.vaccinationInfo?.forEach { info ->
+    //                    if (info.certificateUrl != null && info.status != null) {
+    //                        documents.add(
+    //                            PhotoDocument(
+    //                                imageUrl = info.certificateUrl.valueOrEmpty(),
+    //                                type = info.type,
+    //                                status =  info.status.valueOrEmpty(),
+    //                                time = info.time,
+    //                                vaccineType = info.vaccineType
+    //                            )
+    //                        )
+    //                    }
+    //                }
+    //                _profileDocument.update { Pair(profile.data,documents) }
+    //            }
+    //        }.onCompletion { cause ->
+    //            if (cause.isNonNull()) {
+    //                _profileErrorState.update { cause }
+    //            }
+    //        }.collect()
+    //    }
     @Composable
     @Preview
     fun UIDrawBehind(){
